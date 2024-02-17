@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('fax')->nullable();
             $table->string('email')->nullable();
             $table->string('web_address')->nullable();
+            $table->string('image_path')->nullable();
             $table->unsignedBigInteger('district_id');
 
             $table->foreign('district_id')->references('id')->on('districts');

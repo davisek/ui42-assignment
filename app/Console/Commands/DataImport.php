@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\City;
 use App\Models\District;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Storage;
 use Sunra\PhpSimple\HtmlDomParser;
 
 class DataImport extends Command
@@ -32,7 +33,7 @@ class DataImport extends Command
         $html = $this->getHtml('https://www.e-obce.sk/kraj/NR.html');
 
         $districtLinks = $html->find('.okreslink');
-
+        $imgCount = 0;
         foreach ($districtLinks as $link) {
             $districtUrl = $link->href;
             $districtName = $link->plaintext;
@@ -57,6 +58,7 @@ class DataImport extends Command
                     $fax = "";
                     $email = "";
                     $webAddress = "";
+                    $imagePath = "";
 
                     $this->line('----');
                     $this->line($name);
@@ -69,6 +71,20 @@ class DataImport extends Command
                     }
                     $tableSecond = $htmlCity->find('table', 9);
                     foreach ($tableSecond->find('tr') as $row) {
+                        if ($row->find('td strong', 0) && str_contains($row->find('td strong', 0)->plaintext, "Obecný úrad")
+                            || $row->find('td strong', 0) && str_contains($row->find('td strong', 0)->plaintext, "Mestský úrad")) {
+                            if (!$row->find('.obecmenutd')) {
+                                $imageElement = $row->find('td img', 0);
+                                $imageUrl = $imageElement ? $imageElement->src : null;
+
+                                if ($imageUrl) {
+                                    $imgCount++;
+                                    $imageContents = file_get_contents($imageUrl);
+                                    $imagePath = "images/{$imgCount}_image.jpg";
+                                    Storage::put($imagePath, $imageContents);
+                                }
+                            }
+                        }
                         if ($row->find('td div', 0) && str_contains($row->find('td div', 0)->plaintext, "Tel:")) {
                             $phone = $row->find('td table tbody tr td', 0)->plaintext;
                             $this->line('Tel: ' . $phone);
@@ -98,6 +114,12 @@ class DataImport extends Command
                         'web_address' => $webAddress,
                         'district_id' => District::where('name', $districtName)->value('id')
                     ]);
+                    $city = City::where('name', $name)->first();
+                    if ($city && !$city->image_path) {
+                        $city->image_path = $imagePath;
+                        $city->save();
+                        $this->line("Image path saved to database: $imagePath");
+                    }
 
                 }
             }
