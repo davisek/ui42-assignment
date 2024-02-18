@@ -1,0 +1,81 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import "~bootstrap/scss/bootstrap";
+
+$primary-color: #0978f0;
+$secondary-color: #fff;
+$button-color: #07d3a9;
+$neon-color: #00ff00;
+
+body {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: $secondary-color;
+
+    img {
+        width: 45%;
+    }
+    nav {
+        a {
+            color: $primary-color!important;
+        }
+        form button {
+            background-color: $button-color;
+            color: $secondary-color;
+            border: none;
+            border-radius: 5px;
+            padding: 0 30px;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken($button-color, 10%);
+            }
+        }
+        .dropdown {
+            button {
+                color: #aaa6a6;
+
+                &:hover {
+                    color: lighten(#aaa6a6, 10%);
+                }
+                &:focus {
+                    color: #aaa6a6;
+                }
+            }
+            a {
+                color: #aaa6a6!important;
+            }
+        }
+        .form-for-icon {
+            position: relative;
+        }
+        .form-icon {
+            position: absolute;
+            z-index: 2;
+            display: block;
+            width: 2.375rem;
+            height: 2.375rem;
+            line-height: 2.375rem;
+            text-align: center;
+            pointer-events: none;
+            color: #aaa6a6;
+            right: 0;
+        }
+    }
+    li {
+       a {
+            color: #121212!important;
+       }
+    }
+}
