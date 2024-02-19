@@ -1,0 +1,8 @@
+$color-top-right: #0b81f2;
+$color-bottom-left: #109df5;
+$color-bottom-right: #13aef7;
+
+@mixin gradient($primary-color) {
+    background: linear-gradient(to bottom right, $primary-color, $color-top-right, $color-bottom-right, $color-bottom-left);
+    background-size: 100% 100%;
+}

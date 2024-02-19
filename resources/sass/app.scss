@@ -1,25 +1,9 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
+@import 'config';
+@import 'gradient';
 
-$primary-color: #0978f0;
-$secondary-color: #fff;
-$button-color: #07d3a9;
-$neon-color: #00ff00;
-
-body {
-    padding: 0;
-    margin: 0;
-    font-weight: 500;
-}
-
-img {
-    width: 100%;
-}
-
-a {
-    text-decoration: none;
-}
-
+// Header Styling
 header {
     background-color: $secondary-color;
 
@@ -77,5 +61,111 @@ header {
        a {
             color: #121212!important;
        }
+    }
+}
+
+// Home Page Styling
+#home {
+    @include gradient($primary-color);
+
+    h1 {
+        color: $secondary-color;
+        font-size: 4.75em;
+        font-weight: lighter;
+    }
+    input {
+        padding: 15px 25px!important;
+        box-shadow: 0 0 20px darken(rgba(9, 120, 240, 0.8), 10%);
+    }
+    .autocomplete-results {
+        position: absolute;
+        width: 100%;
+        background-color: #f8f8f8;
+        border: 1px solid #dfdfdf;
+        border-top: none;
+        border-radius: 5px;
+        max-height: 15vh;
+        overflow-y: auto;
+        display: none;
+        box-shadow: 3px 5px 5px darken(rgba(9, 120, 240, 0.8), 10%);
+
+        div {
+            padding: 10px;
+
+            &:hover {
+                background-color: #dfdfdf;
+            }
+            a {
+                text-decoration: none;
+                color: #464446;
+                display: block;
+            }
+        }
+    }
+}
+
+// Show Page Styling
+#show {
+    border-top: 2px solid #dfdfdf;
+    min-height: 30vh;
+    padding-bottom: 5rem;
+
+    h1 {
+        color: $primary-color;
+    }
+    h2 {
+        color: #464446;
+        font-weight: 300;
+        font-size: 2.5em;
+        margin: 2.5rem;
+    }
+    h3 {
+        font-size: 1em;
+        font-weight: bold;
+    }
+    p {
+        font-weight: 400;
+        color: #464446;
+    }
+    img {
+        width: 15%;
+    }
+    .city-info {
+        background-color: #f8f8f8;
+        padding: 5rem 6rem;
+    }
+    .show-box {
+        box-shadow: 10px 5px 15px darken(rgba(248, 248, 248, 0.5), 10%);
+    }
+}
+
+// Footer Styling
+footer {
+    background-color: #dfdfdf;
+    color: #7b7b7b;
+
+    h2 {
+        font-size: 1em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    p {
+        font-size: 1em;
+        font-weight: 400;
+    }
+    a {
+        color: #7b7b7b;
+        line-height: 1.7em;
+    }
+    .footer-div {
+        margin-bottom: 2.3rem;
+    }
+    .blue-div {
+        color: $primary-color;
+
+        a {
+            color: $primary-color;
+            text-decoration: underline;
+        }
     }
 }

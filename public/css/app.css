@@ -19825,6 +19825,10 @@ a {
   text-decoration: none;
 }
 
+.vh-60 {
+  min-height: 60vh;
+}
+
 header {
   background-color: #fff;
 }
@@ -19874,4 +19878,102 @@ header nav .form-icon {
 }
 header li a {
   color: #121212 !important;
+}
+
+#home {
+  background: linear-gradient(to bottom right, #0978f0, #0b81f2, #13aef7, #109df5);
+  background-size: 100% 100%;
+}
+#home h1, #home .h1 {
+  color: #fff;
+  font-size: 4.75em;
+  font-weight: lighter;
+}
+#home input {
+  padding: 15px 25px !important;
+  box-shadow: 0 0 20px rgba(7, 95, 191, 0.8);
+}
+#home .autocomplete-results {
+  position: absolute;
+  width: 100%;
+  background-color: #f8f8f8;
+  border: 1px solid #dfdfdf;
+  border-top: none;
+  border-radius: 5px;
+  max-height: 15vh;
+  overflow-y: auto;
+  display: none;
+  box-shadow: 3px 5px 5px rgba(7, 95, 191, 0.8);
+}
+#home .autocomplete-results div {
+  padding: 10px;
+}
+#home .autocomplete-results div:hover {
+  background-color: #dfdfdf;
+}
+#home .autocomplete-results div a {
+  text-decoration: none;
+  color: #464446;
+  display: block;
+}
+
+#show {
+  border-top: 2px solid #dfdfdf;
+  min-height: 30vh;
+  padding-bottom: 5rem;
+}
+#show h1, #show .h1 {
+  color: #0978f0;
+}
+#show h2, #show .h2 {
+  color: #464446;
+  font-weight: 300;
+  font-size: 2.5em;
+  margin: 2.5rem;
+}
+#show h3, #show .h3 {
+  font-size: 1em;
+  font-weight: bold;
+}
+#show p {
+  font-weight: 400;
+  color: #464446;
+}
+#show img {
+  width: 15%;
+}
+#show .city-info {
+  background-color: #f8f8f8;
+  padding: 5rem 6rem;
+}
+#show .show-box {
+  box-shadow: 10px 5px 15px rgba(223, 223, 223, 0.5);
+}
+
+footer {
+  background-color: #dfdfdf;
+  color: #7b7b7b;
+}
+footer h2, footer .h2 {
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+footer p {
+  font-size: 1em;
+  font-weight: 400;
+}
+footer a {
+  color: #7b7b7b;
+  line-height: 1.7em;
+}
+footer .footer-div {
+  margin-bottom: 2.3rem;
+}
+footer .blue-div {
+  color: #0978f0;
+}
+footer .blue-div a {
+  color: #0978f0;
+  text-decoration: underline;
 }

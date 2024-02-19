@@ -15,7 +15,7 @@ class DataImport extends Command
      *
      * @var string
      */
-    protected $signature = 'app:data-import';
+    protected $signature = 'data:import';
     /**
      * The console command description.
      *
@@ -80,7 +80,7 @@ class DataImport extends Command
                                 if ($imageUrl) {
                                     $imgCount++;
                                     $imageContents = file_get_contents($imageUrl);
-                                    $imagePath = "images/{$imgCount}_image.jpg";
+                                    $imagePath = "public/images/{$imgCount}_image.jpg";
                                     Storage::put($imagePath, $imageContents);
                                 }
                             }
