@@ -80,8 +80,8 @@ class DataImport extends Command
                                 if ($imageUrl) {
                                     $imgCount++;
                                     $imageContents = file_get_contents($imageUrl);
-                                    $imagePath = "public/images/{$imgCount}_image.jpg";
-                                    Storage::put($imagePath, $imageContents);
+                                    $imagePath = "images/{$imgCount}_image.jpg";
+                                    Storage::put('public/' . $imagePath, $imageContents);
                                 }
                             }
                         }
