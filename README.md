@@ -8,7 +8,7 @@ Autor: Dávid Barta
 2. Inštalácia balíčkov: `composer install`
 3. Nakonfigurujte .env súbor a spustite migrácie: `php artisan migrate --path=database/custom_migrations`
 4. Spustenie príkazu na importovanie dát: `php artisan data:import`
-5. Vykonanie príkazu na prepojenie obrázkov v storage: `php artisan storage:link`
+5. Vykonanie príkazu na prepojenie obrázkov storage: `php artisan storage:link`
 
 ## Použítie
 Spustite Laravel development server: `php artisan serve`
