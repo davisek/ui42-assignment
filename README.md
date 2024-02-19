@@ -11,6 +11,7 @@ Autor: Dávid Barta
 5. Vykonanie príkazu na prepojenie obrázkov storage: `php artisan storage:link`
 
 ## Použítie
-Vygenerovanie kľúča: `php artisan key:generate`
-Spustite Laravel development server: `php artisan serve`
-Otvorte aplikáciu vo webovom prehliadači: http://localhost:8000
+- Vygenerovanie kľúča: `php artisan key:generate`
+- Spustite Laravel development server: `php artisan serve`
+- Otvorte aplikáciu vo webovom prehliadači: http://localhost:8000
+- Do Vyhľadávacieho poľa píšte meno obce a cez autocomplete to nájde požadovanú obec. Po kliknutí na zobrazenú obec sa presuniete na stránku s jej informáciami.
