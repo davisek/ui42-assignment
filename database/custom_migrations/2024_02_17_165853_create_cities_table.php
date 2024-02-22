@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('web_address')->nullable();
             $table->string('image_path')->nullable();
+            $table->double('lat')->nullable();
+            $table->double('lng')->nullable();
             $table->unsignedBigInteger('district_id');
 
             $table->foreign('district_id')->references('id')->on('districts');

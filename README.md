@@ -8,6 +8,9 @@ Autor: Dávid Barta
 2. Inštalácia balíčkov: `composer install`
 3. Nakonfigurujte .env súbor a spustite migrácie: `php artisan migrate --path=database/custom_migrations`
 4. Spustenie príkazu na importovanie dát: `php artisan data:import`
+5. Pokiaľ chcete v aplikácii zobrazovať geolokáciu, tak navštívte stránku `https://opencagedata.com/` a zaregistrujte sa, aby ste mohli získať API KEY.
+6. Otvorte v priečinku app/Console/Commands súbor StoreLocation.php a vložte do premennej apiKey svoj API kľúč.
+7. Spustenie príkazu na vloženie geolokácie k obciam: `php artisan store:location`
 5. Vykonanie príkazu na prepojenie obrázkov storage: `php artisan storage:link`
 
 ## Použítie

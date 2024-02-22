@@ -115,7 +115,7 @@ class DataImport extends Command
                         'district_id' => District::where('name', $districtName)->value('id')
                     ]);
                     $city = City::where('name', $name)->first();
-                    if ($city && !$city->image_path) {
+                    if ($city) {
                         $city->image_path = $imagePath;
                         $city->save();
                         $this->line("Image path saved to database: $imagePath");
@@ -124,6 +124,7 @@ class DataImport extends Command
                 }
             }
         }
+        $this->line('Data importing was succesful.');
     }
 
     public function getHtml($url) {

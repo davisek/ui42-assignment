@@ -47,14 +47,16 @@
                 </div>
             </div>
         @endunless
+        @unless($city->lat === '' || $city->lng === '')
         <div class="row">
             <div class="col-6">
                 <h3>Zemepisné súradnice:</h3>
             </div>
             <div class="col-6">
-
+                <p>{{ $city->lat . " " . $city->lng }}</p>
             </div>
         </div>
+        @endunless
     </div>
 
     <div class="col-lg-6 text-center text-center d-flex align-items-center justify-content-center p-5 p-lg-0">
